@@ -3,6 +3,8 @@
 import { Menu } from "lucide-react";
 import React, { useEffect, useMemo, useState } from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
+import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const baseLink =
@@ -58,7 +60,16 @@ const Navbar = () => {
     <div className="navbar bg-white dark:bg-base-100 dark:text-white text-gray-900 shadow-sm px-12">
       <div className="navbar-start">
         <div className="flex w-full lg:w-auto">
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <Link href="/">
+            <Image
+              src="/images/JD-blue.png"
+              alt="Logo Joël Emmanuel Daho"
+              className="w-full max-w-sm rounded-xl"
+              width={200}
+              height={100}
+              unoptimized
+            />
+          </Link>
         </div>
       </div>
 

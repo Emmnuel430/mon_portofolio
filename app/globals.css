@@ -11,3 +11,13 @@
 .dark {
   color-scheme: dark;
 }
+
+/* Design tokens */
+@theme {
+  --color-brand: #2563eb; /* couleur principale */
+  --color-brand-muted: #64748b; /* secondaire / texte */
+  --color-brand-dark: #0f172a; /* titres forts */
+
+  --color-surface: #ffffff; /* fond principal */
+  --color-surface-alt: #f1f5f9; /* sections */
+}

@@ -2,20 +2,20 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="bg-white dark:bg-base-100">
+    <section className="bg-color-surface dark:bg-base-100">
       <div className="py-10 md:grid md:grid-cols-2 md:items-center md:gap-12 lg:min-h-screen lg:px-8">
         
         {/* LEFT — Texte */}
         <div className="max-w-xl text-left">
           {/* Nom */}
-          <p className="text-lg font-medium text-primary">
+          <p className="text-lg font-medium text-brand">
             Joël Emmanuel Daho
           </p>
 
           {/* Métier */}
           <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
             Développeur Full-Stack{" "}
-            <span className="text-primary">React & Laravel</span>
+            <span className="text-brand">React & Laravel</span>
           </h1>
 
           {/* Valeur */}
@@ -32,7 +32,7 @@ export default function Hero() {
           <div className="mt-6 flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="btn btn-primary"
+              className="btn btn-brand"
             >
               Voir mes projets
             </a>
