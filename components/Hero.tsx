@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="bg-color-surface dark:bg-base-100">
+    <section className="bg-white dark:bg-base-100">
       <div className="py-10 md:grid md:grid-cols-2 md:items-center md:gap-12 lg:min-h-screen lg:px-8">
         
         {/* LEFT — Texte */}
