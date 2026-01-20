@@ -22,7 +22,7 @@ const Navbar = () => {
       { id: "a-propos", title: "À propos" },
       { id: "contact", title: "Contact" },
     ],
-    []
+    [],
   );
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const Navbar = () => {
       {
         threshold: 0.6, // un peu plus strict (60%)
         // rootMargin: "-50px 0px -50px 0px", // offset haut/bas
-      }
+      },
     );
 
     sections.forEach((section) => {
@@ -59,18 +59,16 @@ const Navbar = () => {
   return (
     <div className="navbar bg-white dark:bg-base-100 dark:text-white text-gray-900 shadow-sm px-12">
       <div className="navbar-start">
-        <div className="flex w-full lg:w-auto">
-          <Link href="/">
-            <Image
-              src="/images/JD-blue.png"
-              alt="Logo Joël Emmanuel Daho"
-              className="w-full max-w-sm rounded-xl"
-              width={200}
-              height={100}
-              unoptimized
-            />
-          </Link>
-        </div>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo.png"
+            alt="Logo Joël Emmanuel Daho"
+            width={160}
+            height={40}
+            className="h-20 w-auto"
+            priority
+          />
+        </Link>
       </div>
 
       <div className="navbar-center hidden lg:flex min-w-0">

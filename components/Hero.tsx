@@ -2,45 +2,43 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="bg-white dark:bg-base-100">
-      <div className="py-10 md:grid md:grid-cols-2 md:items-center md:gap-12 lg:min-h-screen lg:px-8">
-        
+    <section className="">
+      <div className="py-10 md:grid md:grid-cols-2 md:items-center md:gap-12 lg:min-h-[80vh] lg:px-8">
         {/* LEFT — Texte */}
         <div className="max-w-xl text-left">
           {/* Nom */}
           <p className="text-lg font-medium text-brand">
-            Joël Emmanuel Daho
+            D. Joël Emmanuel DAHO
           </p>
 
           {/* Métier */}
-          <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+          <h1 className="mt-2 font-bold tracking-tight text-gray-900 dark:text-white text-4xl sm:text-5xl">
             Développeur Full-Stack{" "}
             <span className="text-brand">React & Laravel</span>
           </h1>
 
           {/* Valeur */}
           <p className="mt-4 text-base text-gray-700 dark:text-gray-300 sm:text-lg">
-            Je conçois des applications web claires, performantes et maintenables.
+            Je conçois des applications web claires, performantes et
+            maintenables.
           </p>
 
           {/* Positionnement freelance */}
           <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-            De l’idée au produit fini : back-end, front-end et architecture propre.
+            De l’idée au produit fini : back-end, front-end et architecture
+            propre.
           </p>
 
           {/* CTA */}
           <div className="mt-6 flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="btn btn-brand"
+              className="btn bg-brand text-white hover:opacity-80 transition duration-300 border-0 shadow-lg"
             >
               Voir mes projets
             </a>
 
-            <a
-              href="#contact"
-              className="btn btn-outline"
-            >
+            <a href="#contact" className="btn btn-soft shadow-lg">
               Parlons de votre projet
             </a>
           </div>
@@ -67,7 +65,6 @@ export function buildProduct() {
             height={1200}
             unoptimized
           />
-
         </div>
       </div>
     </section>

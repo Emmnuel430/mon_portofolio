@@ -21,3 +21,11 @@
   --color-surface: #ffffff; /* fond principal */
   --color-surface-alt: #f1f5f9; /* sections */
 }
+
+.dark {
+  --color-brand-muted: #94a3b8; /* texte secondaire (slate-400) */
+  --color-brand-dark: #f8fafc; /* titres forts (slate-50) */
+
+  --color-surface: #1d232a; /* fond principal (base-100) */
+  --color-surface-alt: #101828; /* sections (slate-900) */
+}

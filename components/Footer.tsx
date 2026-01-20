@@ -1,4 +1,5 @@
-import { Facebook, Github, Hash, Linkedin } from "lucide-react";
+import { Facebook, Github, Linkedin } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 import { RiTiktokLine } from "react-icons/ri";
 
@@ -6,7 +7,14 @@ const Footer = () => {
   return (
     <footer className="footer footer-horizontal footer-center bg-gray-100 dark:bg-base-100 dark:text-white text-gray-900 shadow-sm p-10">
       <aside>
-        <Hash size={60} />
+        <Image
+          src="/images/logo.png"
+          alt="Logo Joël Emmanuel Daho"
+          width={160}
+          height={40}
+          className="h-40 w-auto"
+          priority
+        />
         <p className="font-bold">
           ACME Industries Ltd.
           <br />
