@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="">
+    <section id="accueil">
       <div className="py-10 md:grid md:grid-cols-2 md:items-center md:gap-12 lg:min-h-[80vh] lg:px-8">
         {/* LEFT — Texte */}
         <div className="max-w-xl text-left">
@@ -32,7 +32,7 @@ export default function Hero() {
           {/* CTA */}
           <div className="mt-6 flex flex-wrap gap-4">
             <a
-              href="#projects"
+              href="#projets"
               className="btn bg-brand text-white hover:opacity-80 transition duration-300 border-0 shadow-lg"
             >
               Voir mes projets

@@ -5,15 +5,16 @@ export const skills = [
   },
   {
     title: "Backend",
-    items: ["Laravel", "Django", "MySQL", "Prisma", "Supabase"],
+    items: [
+      "Laravel",
+      // "Django",
+      "MySQL",
+      "Prisma",
+      //  "Supabase"
+    ],
   },
   {
     title: "Architecture & Outils",
-    items: [
-      "API REST",
-      // "Git",
-      "GitHub",
-      "GitLab",
-    ],
+    items: ["API REST", "GitHub", "GitLab"],
   },
 ];

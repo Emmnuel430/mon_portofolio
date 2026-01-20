@@ -9,11 +9,14 @@ export default function Projects() {
   const [activeProject, setActiveProject] = useState<any>(null);
 
   return (
-    <section className="py-20">
+    <section className="py-20" id="projets" aria-labelledby="projets-title">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Header */}
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-brand-dark sm:text-4xl">
+          <h2
+            className="text-3xl font-bold text-brand-dark sm:text-4xl"
+            id="projets-title"
+          >
             Projets
           </h2>
           <p className="mt-3 text-brand-muted">
@@ -26,22 +29,26 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.slug}
-              className="rounded-xl border border-slate-200 p-6 transition hover:shadow-md"
+              className="rounded-xl border border-slate-200 p-6 transition hover:shadow-md flex flex-col justify-between"
             >
-              <h3 className="text-lg font-semibold text-brand-dark">
-                {project.name}
-              </h3>
+              <div>
+                <h3 className="text-lg font-semibold text-brand-dark">
+                  {project.name}
+                </h3>
 
-              <p className="mt-1 text-sm text-brand-muted">{project.type}</p>
+                <p className="mt-1 text-sm text-brand-muted">{project.type}</p>
 
-              <p className="mt-4 text-sm text-brand-muted">{project.summary}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.stack.map((tech) => (
+                    <span key={tech} className="badge badge-soft text-xs">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
-              <div className="mt-4 flex flex-wrap gap-2">
-                {project.stack.map((tech) => (
-                  <span key={tech} className="badge badge-soft text-xs">
-                    {tech}
-                  </span>
-                ))}
+                <p className="mt-4 text-sm text-brand-muted">
+                  {project.summary}
+                </p>
               </div>
 
               <button
