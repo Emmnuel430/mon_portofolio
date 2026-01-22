@@ -15,14 +15,21 @@ export default function ProjectModal({ project, onClose }: any) {
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4"
       onClick={onClose}
+      role="presentation"
     >
       <div
         className="relative max-h-[90vh] w-full max-w-3xl overflow-hidden rounded-xl bg-surface"
         onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-modal-title"
       >
         {/* Header */}
         <div className="sticky top-0 border-b bg-surface p-6">
-          <h3 className="text-xl font-semibold text-brand-dark">
+          <h3
+            id="project-modal-title"
+            className="text-xl font-semibold text-brand-dark"
+          >
             {project.name}
           </h3>
           <div className="mt-2 flex flex-wrap gap-2">

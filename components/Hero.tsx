@@ -61,9 +61,9 @@ export function buildProduct() {
             src="/images/2222.png"
             alt="Joël Emmanuel Daho – Développeur Full-Stack"
             className="w-full max-w-sm rounded-xl shadow-lg"
-            width={800}
-            height={1200}
-            unoptimized
+            width={384}
+            height={576}
+            priority
           />
         </div>
       </div>

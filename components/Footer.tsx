@@ -9,10 +9,9 @@ const Footer = () => {
         <Image
           src="/images/logo.png"
           alt="Logo Joël Emmanuel Daho"
-          width={1080}
-          height={1080}
-          className="h-40 w-auto"
-          priority
+          width={160}
+          height={160}
+          className="h-16 w-auto"
         />
         <p className="font-bold">D. Joël Emmanuel DAHO</p>
         <p> Développeur Web - Formateur</p>{" "}
@@ -26,6 +25,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-brand transition"
+              aria-label={`Ouvrir ${key}`}
             >
               <Icon size={32} />
             </a>

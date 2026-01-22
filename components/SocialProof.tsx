@@ -1,7 +1,12 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import Marquee from "react-fast-marquee";
+
+const Marquee = dynamic(() => import("react-fast-marquee"), {
+  ssr: false,
+  loading: () => <div className="h-12" />,
+});
 
 const logos = Array.from({ length: 11 }, (_, i) => ({
   src: `/images/partners/logo-${i + 1}.png`,
@@ -34,8 +39,9 @@ export default function SocialProof() {
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={200}
-                  height={80}
+                  width={160}
+                  height={64}
+                  loading="lazy"
                   className="
               h-12 sm:h-16 md:h-20
               w-auto

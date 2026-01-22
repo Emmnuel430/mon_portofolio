@@ -90,11 +90,11 @@ export default function About() {
             {/* Option 1 : Photo */}
             <div className="overflow-hidden rounded-2xl bg-slate-100">
               <Image
-                src="/images/2222.png" // optionnel
+                src="/images/2222.png"
                 alt="Photo de Joël Emmanuel Daho"
-                width={1024}
-                height={1080}
-                className="h-90 w-auto"
+                width={320}
+                height={360}
+                className="h-auto w-auto"
                 priority
               />
             </div>

@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { projects } from "@/data/projects";
-import ProjectModal from "./ProjectModal";
+
+const ProjectModal = dynamic(() => import("./ProjectModal"), { ssr: false });
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState<any>(null);

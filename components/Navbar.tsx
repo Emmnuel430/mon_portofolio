@@ -74,10 +74,9 @@ const Navbar = () => {
           <Image
             src="/images/logo.png"
             alt="Logo Joël Emmanuel Daho"
-            width={1080}
-            height={1080}
+            width={80}
+            height={80}
             className="h-20 w-auto"
-            priority
           />
         </Link>
       </div>
@@ -100,13 +99,14 @@ const Navbar = () => {
           <ThemeSwitcher />
         </div>
         <div className="dropdown dropdown-end block lg:hidden ml-2">
-          <div
-            tabIndex={0}
-            role="button"
+          <button
+            aria-label="Ouvrir le menu"
+            aria-haspopup="true"
+            aria-expanded={false}
             className="btn btn-ghost lg:hidden text-gray-900 dark:text-white"
           >
             <Menu />
-          </div>
+          </button>
           <ul className="menu menu-sm dropdown-content bg-white dark:bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow mx-auto">
             {sections.map((section, index) => (
               <li key={index}>
