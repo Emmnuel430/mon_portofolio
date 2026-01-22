@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "D. Joel Emmanuel Daho" }],
   openGraph: {
-    title: "Portfolio – Développeur Full-Stack React & Laravel",
+    title: "Joel E. DAHO – Développeur Full-Stack React & Laravel",
     description:
       "Découvrez mes projets, compétences et expériences en développement web moderne.",
     type: "website",
