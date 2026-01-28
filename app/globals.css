@@ -37,3 +37,8 @@ section {
   --color-surface: #1d232a; /* fond principal (base-100) */
   --color-surface-alt: #101828; /* sections (slate-900) */
 }
+
+.light .divider::after,
+.light .divider::before {
+  background-color: var(--color-brand-muted) !important;
+}

@@ -4,6 +4,8 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { projects } from "@/data/projects";
+import Image from "next/image";
+import { StackAvatars } from "./Avatars";
 
 const ProjectModal = dynamic(() => import("./ProjectModal"), { ssr: false });
 
@@ -34,23 +36,23 @@ export default function Projects() {
               className="rounded-xl border border-slate-200 p-6 transition hover:shadow-md flex flex-col justify-between"
             >
               <div>
+                <Image
+                  src={project.cover}
+                  alt={`Aperçu du projet ${project.name}`}
+                  width={600}
+                  height={400}
+                  className="mb-4 rounded-lg object-cover"
+                />
+
                 <h3 className="text-lg font-semibold text-brand-dark">
                   {project.name}
                 </h3>
 
                 <p className="mt-1 text-sm text-brand-muted">{project.type}</p>
 
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {project.stack.map((tech) => (
-                    <span key={tech} className="badge badge-soft text-xs">
-                      {tech}
-                    </span>
-                  ))}
+                <div className="mt-4 flex justify-end flex-wrap gap-2">
+                  <StackAvatars stack={project.stack} />
                 </div>
-
-                <p className="mt-4 text-sm text-brand-muted">
-                  {project.summary}
-                </p>
               </div>
 
               <button

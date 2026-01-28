@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 export default function Hero() {
@@ -32,15 +33,23 @@ export default function Hero() {
           {/* CTA */}
           <div className="mt-6 flex flex-wrap gap-4">
             <a
-              href="#projets"
-              className="btn bg-brand text-white hover:opacity-80 transition duration-300 border-0 shadow-lg"
+              href="#contact"
+              className="btn bg-brand text-white shadow-lg hover:opacity-80 transition duration-300 ease-in-out rounded-md"
             >
-              Voir mes projets
-            </a>
-
-            <a href="#contact" className="btn btn-soft shadow-lg">
               Parlons de votre projet
             </a>
+
+            <button
+              className="btn btn-soft shadow-lg transition duration-300 ease-in-out rounded-md"
+              onClick={() =>
+                window.open(
+                  "https://drive.google.com/uc?export=download&id=1A5ZyzVfKgTFG9ZmL2ZECfYFDymCOZXfz",
+                  "_blank",
+                )
+              }
+            >
+              Voir mon CV
+            </button>
           </div>
         </div>
 
