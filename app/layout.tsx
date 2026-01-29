@@ -38,6 +38,15 @@ export const metadata: Metadata = {
     description:
       "Découvrez mes projets, compétences et expériences en développement web moderne.",
     type: "website",
+    images: ["/favicon.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@joel_emmanuel",
+    title: "Joel E. DAHO – Développeur Full-Stack React & Laravel",
+    description:
+      "Découvrez mes projets, compétences et expériences en développement web moderne.",
+    images: ["/favicon.png"],
   },
 };
 
