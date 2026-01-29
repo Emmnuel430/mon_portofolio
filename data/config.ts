@@ -1,4 +1,5 @@
 import { StackKey } from "@/lib/types";
+import { Cable } from "lucide-react";
 import {
   FaReact,
   FaLaravel,
@@ -8,14 +9,22 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaGitAlt,
+  FaFigma,
 } from "react-icons/fa";
+import { FaGithub, FaGitlab } from "react-icons/fa6";
+import { GrMysql } from "react-icons/gr";
 import {
   SiTailwindcss,
   SiNextdotjs,
   SiTypescript,
-  SiMysql,
   SiSupabase,
+  SiJavascript,
+  SiDjango,
+  SiPrisma,
+  SiDaisyui,
+  SiClerk,
 } from "react-icons/si";
+import { SiVercel, SiCloudflare, SiAmazons3 } from "react-icons/si";
 
 export const STACKS: Record<
   StackKey | string,
@@ -45,6 +54,12 @@ export const STACKS: Record<
     icon: SiTailwindcss,
     color: "text-sky-400",
   },
+  "Tailwind CSS": {
+    label: "Tailwind CSS",
+    icon: SiTailwindcss,
+    color: "text-sky-400",
+  },
+
   "Next.js": {
     label: "Next.js",
     icon: SiNextdotjs,
@@ -82,12 +97,77 @@ export const STACKS: Record<
   },
   MySql: {
     label: "MySql",
-    icon: SiMysql,
+    icon: GrMysql,
+    color: "text-blue-600",
+  },
+  MySQL: {
+    label: "MySQL",
+    icon: GrMysql,
     color: "text-blue-600",
   },
   Supabase: {
     label: "Supabase",
     icon: SiSupabase,
     color: "text-green-600",
+  },
+  JavaScript: {
+    label: "JavaScript",
+    icon: SiJavascript,
+    color: "text-yellow-400",
+  },
+  Django: {
+    label: "Django",
+    icon: SiDjango,
+    color: "text-green-800",
+  },
+  Prisma: {
+    label: "Prisma",
+    icon: SiPrisma,
+    color: "text-blue-500",
+  },
+  "API REST": {
+    label: "API REST",
+    icon: Cable,
+    color: "text-green-500",
+  },
+  GitHub: {
+    label: "GitHub",
+    icon: FaGithub,
+    color: "text-black dark:text-white",
+  },
+  GitLab: {
+    label: "GitLab",
+    icon: FaGitlab,
+    color: "text-orange-600",
+  },
+  DaisyUI: {
+    label: "DaisyUI",
+    icon: SiDaisyui,
+    color: "text-sky-400",
+  },
+  Vercel: {
+    label: "Vercel",
+    icon: SiVercel,
+    color: "text-black dark:text-white",
+  },
+  Cloudflare: {
+    label: "Cloudflare",
+    icon: SiCloudflare,
+    color: "text-orange-500",
+  },
+  "Amazon AWS S3": {
+    label: "AWS S3",
+    icon: SiAmazons3,
+    color: "text-orange-400",
+  },
+  Clerk: {
+    label: "Clerk (Auth)",
+    icon: SiClerk,
+    color: "text-indigo-500",
+  },
+  Figma: {
+    label: "Figma",
+    icon: FaFigma,
+    color: "text-pink-500",
   },
 };

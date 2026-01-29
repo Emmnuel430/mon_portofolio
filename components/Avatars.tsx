@@ -50,3 +50,25 @@ export function StackBadge({ tech, size = "md" }: StackBadgeProps) {
     </span>
   );
 }
+
+import { FaCode } from "react-icons/fa";
+
+export function StackIcon({ tech }: { tech: string }) {
+  const stackItem = STACKS[tech as keyof typeof STACKS];
+
+  if (!stackItem) {
+    return (
+      <span title={tech || "Inconnu"}>
+        <FaCode className="me-2 opacity-40" />
+      </span>
+    );
+  }
+
+  const Icon = stackItem.icon;
+
+  return (
+    <span title={stackItem.label}>
+      <Icon className={`me-2 ${stackItem.color}`} />
+    </span>
+  );
+}

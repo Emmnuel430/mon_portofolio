@@ -1,20 +1,40 @@
 export const skills = [
   {
-    title: "Frontend",
-    items: ["JavaScript", "React", "Next.js", "Tailwind CSS", "Bootstrap"],
-  },
-  {
-    title: "Backend",
+    title: "Stack principale",
+    principal: true,
     items: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
       "Laravel",
-      // "Django",
       "MySQL",
-      "Prisma",
-      //  "Supabase"
+      "DaisyUI",
+      "API REST",
     ],
   },
   {
-    title: "Architecture & Outils",
-    items: ["API REST", "GitHub", "GitLab"],
+    title: "Stack régulière",
+    items: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "Bootstrap",
+      "Prisma",
+      "Supabase",
+      // "Django" -> not used regularly anymore
+    ],
+  },
+  {
+    title: "Outils & plateformes",
+    items: [
+      "GitHub",
+      "GitLab",
+      "Vercel",
+      "Cloudflare",
+      "Amazon AWS S3",
+      "Clerk",
+      "Figma",
+    ],
   },
 ];

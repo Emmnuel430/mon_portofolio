@@ -21,6 +21,7 @@ export type StackKey =
   | "Laravel"
   | "Bootstrap"
   | "Tailwind"
+  | "Tailwind CSS"
   | "Next.js"
   | "TypeScript"
   | "Node.js"
@@ -29,7 +30,13 @@ export type StackKey =
   | "CSS"
   | "Git"
   | "MySql"
-  | "Supabase";
+  | "Supabase"
+  | "JavaScript"
+  | "Django"
+  | "Prisma"
+  | "API REST"
+  | "GitHub"
+  | "GitLab";
 
 export type StackAvatarsProps = {
   stack: StackKey[] | string[];
