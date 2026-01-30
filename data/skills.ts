@@ -8,7 +8,7 @@ export const skills = [
       "Tailwind CSS",
       "Laravel",
       "MySQL",
-      "DaisyUI",
+      "daisyUI",
       "API REST",
     ],
   },
@@ -22,6 +22,7 @@ export const skills = [
       "Bootstrap",
       "Prisma",
       "Supabase",
+      "PostgreSQL",
       // "Django" -> not used regularly anymore
     ],
   },

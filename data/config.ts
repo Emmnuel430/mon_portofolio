@@ -1,5 +1,6 @@
 import { StackKey } from "@/lib/types";
 import { Cable } from "lucide-react";
+import { BiLogoPostgresql } from "react-icons/bi";
 import {
   FaReact,
   FaLaravel,
@@ -140,7 +141,7 @@ export const STACKS: Record<
     icon: FaGitlab,
     color: "text-orange-600",
   },
-  DaisyUI: {
+  daisyUI: {
     label: "DaisyUI",
     icon: SiDaisyui,
     color: "text-sky-400",
@@ -169,5 +170,10 @@ export const STACKS: Record<
     label: "Figma",
     icon: FaFigma,
     color: "text-pink-500",
+  },
+  PostgreSQL: {
+    label: "PostgreSQL",
+    icon: BiLogoPostgresql,
+    color: "text-blue-600",
   },
 };

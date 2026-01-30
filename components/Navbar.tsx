@@ -100,6 +100,7 @@ const Navbar = () => {
         </div>
         <div className="dropdown dropdown-end block lg:hidden ml-2">
           <button
+            tabIndex={0}
             aria-label="Ouvrir le menu"
             aria-haspopup="true"
             aria-expanded={false}
@@ -107,7 +108,10 @@ const Navbar = () => {
           >
             <Menu />
           </button>
-          <ul className="menu menu-sm dropdown-content bg-white dark:bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow mx-auto">
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content bg-white dark:bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow mx-auto"
+          >
             {sections.map((section, index) => (
               <li key={index}>
                 <a

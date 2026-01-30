@@ -6,6 +6,7 @@ import { useState } from "react";
 import { projects } from "@/data/projects";
 import Image from "next/image";
 import { StackAvatars } from "./Avatars";
+import { motion } from "motion/react";
 
 const ProjectModal = dynamic(() => import("./ProjectModal"), { ssr: false });
 
@@ -30,8 +31,16 @@ export default function Projects() {
 
         {/* Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <div
+          {projects.map((project, index) => (
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.45,
+                ease: "easeOut",
+                delay: index * 0.08,
+              }}
               key={project.slug}
               className="rounded-xl border border-slate-200 p-6 transition hover:shadow-md flex flex-col justify-between"
             >
@@ -61,7 +70,7 @@ export default function Projects() {
               >
                 Voir plus →
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

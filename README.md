@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mon Portfolio – Développeur Full-Stack
 
-## Getting Started
+Portfolio professionnel développé avec **Next.js (App Router)** et **TypeScript**, destiné à présenter mes compétences, mes projets et mon approche du développement web moderne en tant que **développeur full-stack React & Laravel**.
 
-First, run the development server:
+🔗 **Site en ligne** : [Voir le site](https://mon-portofolio-pearl.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🎯 Objectif du projet
+
+Ce portfolio a été conçu comme un projet personnel abouti, sans contrainte client, avec pour objectifs :
+
+- Présenter clairement mon profil et mon positionnement technique
+- Mettre en avant des projets concrets (applications, SaaS, outils métier)
+- Démontrer ma capacité à concevoir, structurer et déployer une application moderne
+- Servir de base évolutive pour ma présence professionnelle (freelance / emploi)
+
+Le projet a été conçu, développé et déployé en **14 jours**.
+
+---
+
+## Stack technique
+
+### Frontend
+
+- **Next.js** (App Router)
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **DaisyUI**
+
+### Bonnes pratiques
+
+- Composants réutilisables
+- Structure claire et maintenable
+- Design responsive (desktop & mobile)
+- Optimisation des performances (Next Image, lazy loading, Lighthouse > 90)
+- SEO de base (structure HTML, metadata)
+
+### Déploiement
+
+- **Vercel**
+
+---
+
+## Fonctionnalités principales
+
+- Navigation fluide en one-page avec ancres
+- Sections dynamiques :
+  - Présentation / Hero avec un SocialProof juste après
+  - Compétences techniques
+  - Projets
+  - À propos
+  - Contact
+- Mise en avant de projets réels avec stack et contexte
+- Call-to-action clair pour la prise de contact
+- Interface responsive et lisible sur tous les écrans
+
+---
+
+## 📁 Organisation du projet
+
+```txt
+/app            → Pages et layout (App Router)
+/components     → Composants UI réutilisables
+/data           → Données statiques (sections, projets, compétences)
+/public         → Images et assets
+/lib            → Typages des data utilisées
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Installation et lancement en local
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+git clone https://github.com/Emmnuel430/mon_portofolio.git
+cd mon_portofolio
 
-## Learn More
+# moi j'ai utilisé pnpm
+pnpm install
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+L’application sera accessible sur :
+[http://localhost:3000](http://localhost:3000)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Améliorations prévues
 
-## Deploy on Vercel
+- Ajout de témoignages / retours clients
+- Optimisations SEO avancées
+- Internationalisation (i18n)
+- Section blog / articles techniques
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 👤 Auteur & contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Joël Emmanuel Daho
+Développeur Full-Stack React & Laravel
+
+📧 Email : emmanueldaho859@gmail.com
+
+💬 WhatsApp : +225 07 59 95 79 56
+🌍 Portfolio : [https://mon-portofolio-pearl.vercel.app/](https://mon-portofolio-pearl.vercel.app/)
+
+---
+
+N’hésitez pas à parcourir le site ou à me contacter pour toute collaboration ou opportunité 😉.
