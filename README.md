@@ -100,7 +100,8 @@ Développeur Full-Stack React & Laravel
 
 📧 Email : emmanueldaho859@gmail.com
 
-💬 WhatsApp : +225 07 59 95 79 56
+💬 WhatsApp : [+225 07 59 95 79 56](https://wa.me/2250759957956)
+
 🌍 Portfolio : [https://mon-portofolio-pearl.vercel.app/](https://mon-portofolio-pearl.vercel.app/)
 
 ---
