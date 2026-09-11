@@ -1,7 +1,7 @@
 export type Project = {
   slug: string;
   name: string;
-  status: "completed" | "in-progress" | "planned";
+  status: "completed" | "working-on" | "planned";
   stack: StackKey[];
   type: string;
   summary: string;
@@ -14,6 +14,9 @@ export type Project = {
   cover: string;
   logo: string;
   gallery: string[];
+  technicalChallenge?: string;
+  architectureRationale?: string;
+  metrics?: string;
 };
 
 export type StackKey =
@@ -30,6 +33,7 @@ export type StackKey =
   | "CSS"
   | "Git"
   | "MySql"
+  | "MySQL"
   | "Supabase"
   | "JavaScript"
   | "Django"
