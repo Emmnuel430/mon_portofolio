@@ -1,27 +1,19 @@
 "use client";
 
-import { Menu } from "lucide-react";
 import React, { useEffect, useMemo, useState } from "react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import Image from "next/image";
 import Link from "next/link";
 
-const Navbar = () => {
-  const baseLink =
-    "relative px-3 py-2 transition-colors duration-200 text-gray-900 dark:text-white";
-  const desktopUnderline =
-    "lg:after:absolute lg:after:left-0 lg:after:-bottom-1 lg:after:h-[2px] lg:after:w-full lg:after:scale-x-0 lg:after:bg-brand lg:after:transition-transform lg:after:duration-200 lg:hover:after:scale-x-100";
-  const hoverText = "hover:text-brand";
-
-  const activeLink =
-    "text-brand bg-gray-500/20 lg:bg-transparent lg:dark:bg-transparent lg:after:scale-x-100";
-
-  const [activeSection, setActiveSection] = useState("");
+export default function Navbar() {
+  const [activeSection, setActiveSection] = useState("accueil");
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -43,8 +35,6 @@ const Navbar = () => {
           if (entry.isIntersecting) {
             const id = entry.target.id;
             setActiveSection(id);
-
-            history.replaceState(null, "", `#${id}`);
           }
         });
       },
@@ -63,73 +53,114 @@ const Navbar = () => {
   }, [sections]);
 
   return (
-    <div
-      className={`
-        navbar fixed top-0 z-50 w-full transition-all duration-300 px-12
-        ${scrolled ? "shadow-md bg-white/90 dark:bg-base-100/90 backdrop-blur border-b border-b-gray-900 dark:border-b-gray-200" : "bg-transparent"}
-      `}
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "border-b border-zinc-200/80 bg-white/85 py-3 shadow-xs backdrop-blur-xl dark:border-zinc-800/80 dark:bg-zinc-950/85"
+          : "bg-transparent py-5"
+      }`}
     >
-      <div className="navbar-start">
-        <Link href="/" className="flex items-center">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* LOGO */}
+        <Link
+          href="/"
+          className="group flex items-center gap-2.5 transition-opacity hover:opacity-90"
+          aria-label="Accueil Joël Emmanuel Daho"
+        >
           <Image
             src="/images/logo.png"
             alt="Logo Joël Emmanuel Daho"
             width={80}
-            height={80}
-            className="h-20 w-auto"
+            height={40}
+            className="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            priority
+            unoptimized
           />
+          <span className="font-bold tracking-tight text-zinc-900 sm:inline-block dark:text-white">
+            Joël Daho<span className="text-brand">.</span>
+          </span>
         </Link>
-      </div>
-      <div className="navbar-center hidden lg:flex min-w-0">
-        <ul className="menu menu-horizontal px-1 ">
-          {sections.map((section, index) => (
-            <li key={index}>
+
+        {/* NAVIGATION DESKTOP */}
+        <nav
+          aria-label="Navigation principale"
+          className="hidden items-center gap-1 rounded-full border border-zinc-200/80 bg-white/80 px-4 py-1.5 shadow-2xs backdrop-blur-md lg:flex dark:border-zinc-800/80 dark:bg-zinc-900/70"
+        >
+          {sections.map((section) => {
+            const isActive = activeSection === section.id;
+            return (
               <a
+                key={section.id}
                 href={`#${section.id}`}
-                className={`${baseLink} ${desktopUnderline} ${hoverText} ${activeSection === section.id ? activeLink : ""}`}
+                className={`relative rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all duration-200 ${
+                  isActive
+                    ? "bg-brand text-white shadow-xs"
+                    : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+                }`}
               >
                 {section.title}
               </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="navbar-end">
-        <div className="hidden lg:flex">
+            );
+          })}
+        </nav>
+
+        {/* ACTIONS DROITE (Theme Switcher + CTA + Mobile Toggle) */}
+        <div className="flex items-center gap-2 sm:gap-3">
           <ThemeSwitcher />
-        </div>
-        <div className="dropdown dropdown-end block lg:hidden ml-2">
+
+          {/* Bouton CTA Desktop */}
+          <a
+            href="#contact"
+            className="hidden items-center gap-1.5 rounded-xl bg-zinc-900 px-4 py-2 text-xs font-semibold text-white shadow-xs transition-all duration-200 hover:bg-brand hover:shadow-md active:scale-95 sm:inline-flex dark:bg-zinc-800 dark:hover:bg-brand"
+          >
+            <span>Me contacter</span>
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </a>
+
+          {/* Bouton Menu Mobile */}
           <button
-            tabIndex={0}
-            aria-label="Ouvrir le menu"
-            aria-haspopup="true"
-            aria-expanded={false}
-            className="btn btn-ghost lg:hidden text-gray-900 dark:text-white"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200/80 bg-white text-zinc-700 shadow-2xs transition-colors hover:bg-zinc-50 lg:hidden dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800"
           >
-            <Menu />
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-white dark:bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow mx-auto"
-          >
-            {sections.map((section, index) => (
-              <li key={index}>
+        </div>
+      </div>
+
+      {/* TIROIR DE NAVIGATION MOBILE */}
+      {mobileMenuOpen && (
+        <div className="border-b border-zinc-200/80 bg-white/95 px-4 pt-3 pb-6 shadow-xl backdrop-blur-2xl lg:hidden dark:border-zinc-800 dark:bg-zinc-950/95 animate-in slide-in-from-top-2 duration-200">
+          <nav className="flex flex-col gap-1.5">
+            {sections.map((section) => {
+              const isActive = activeSection === section.id;
+              return (
                 <a
+                  key={section.id}
                   href={`#${section.id}`}
-                  className={`${baseLink} ${desktopUnderline} ${hoverText} ${activeSection === section.id ? activeLink : ""}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`rounded-xl px-4 py-3 text-sm font-semibold transition-all ${
+                    isActive
+                      ? "bg-brand/10 text-brand dark:bg-brand/20 dark:text-blue-300"
+                      : "text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-900"
+                  }`}
                 >
                   {section.title}
                 </a>
-              </li>
-            ))}
-            <li className="mt-2 mx-auto">
-              <ThemeSwitcher />
-            </li>
-          </ul>
+              );
+            })}
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-brand py-3 text-sm font-semibold text-white shadow-md shadow-brand/20"
+            >
+              <span>Me contacter</span>
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </nav>
         </div>
-      </div>
-    </div>
+      )}
+    </header>
   );
-};
+}
 
-export default Navbar;
